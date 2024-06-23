@@ -1,0 +1,92 @@
+--Ro-Ware Test Exec, UI by chxrgxr1
+--Messing with this code WILL mess it up.
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Clear = Instance.new("TextButton")
+local Execute = Instance.new("TextButton")
+local TextBox = Instance.new("TextBox")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.287243545, 0, 0.269817173, 0)
+Frame.Size = UDim2.new(0, 476, 0, 300)
+
+Clear.Name = "Clear"
+Clear.Parent = Frame
+Clear.BackgroundColor3 = Color3.fromRGB(140, 0, 2)
+Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clear.BorderSizePixel = 0
+Clear.Position = UDim2.new(0.537815154, 0, 0.773333311, 0)
+Clear.Size = UDim2.new(0, 200, 0, 50)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(0, 0, 0)
+Clear.TextScaled = true
+Clear.TextSize = 14.000
+Clear.TextWrapped = true
+
+Execute.Name = "Execute"
+Execute.Parent = Frame
+Execute.BackgroundColor3 = Color3.fromRGB(2, 106, 0)
+Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Execute.BorderSizePixel = 0
+Execute.Position = UDim2.new(0.0420168079, 0, 0.773333311, 0)
+Execute.Size = UDim2.new(0, 200, 0, 50)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(0, 0, 0)
+Execute.TextScaled = true
+Execute.TextSize = 14.000
+Execute.TextWrapped = true
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.ClipsDescendants = true
+TextBox.Position = UDim2.new(0.0420168079, 0, 0.0633333325, 0)
+TextBox.Size = UDim2.new(0, 436, 0, 194)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.RobotoMono
+TextBox.MultiLine = true
+TextBox.PlaceholderColor3 = Color3.fromRGB(66, 66, 66)
+TextBox.PlaceholderText = "--RO-Ware"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(132, 132, 132)
+TextBox.TextSize = 12.000
+TextBox.TextWrapped = true
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+TextBox.TextYAlignment = Enum.TextYAlignment.Top
+
+
+local function TFXIS_fake_script() 
+    local script = Instance.new('LocalScript', Clear)
+
+    local text = script.Parent.Parent.TextBox
+    
+    script.Parent.MouseButton1Click:Connect(function()
+        text.Text = ""
+    end)
+end
+coroutine.wrap(TFXIS_fake_script)()
+local function ESEUSBR_fake_script() 
+    local script = Instance.new('LocalScript', Execute)
+
+    script.Parent.MouseButton1Click:Connect(function()
+        loadstring(script.Parent.Parent.TextBox)()
+    end)
+end
+coroutine.wrap(ESEUSBR_fake_script)()
+local function YVTS_fake_script()  
+    local script = Instance.new('LocalScript', Frame)
+
+    script.Parent.Active = true
+    script.Parent.Draggable = true
+end
+coroutine.wrap(YVTS_fake_script)()
